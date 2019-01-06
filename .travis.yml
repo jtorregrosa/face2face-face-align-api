@@ -41,9 +41,7 @@ install:
 # Command to run tests
 script:
   - make test
-  - if [[ ! -z ${TRAVIS_TAG} ]]; then
-    IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make image
-    fi
+  - if [[ ! -z ${TRAVIS_TAG} ]]; then IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make image; fi;
   - cd ..
   - sonar-scanner
 
