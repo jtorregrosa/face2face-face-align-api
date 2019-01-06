@@ -9,6 +9,7 @@ os:
 python:
   - "3.6"
 
+# Add docker support to travis build
 services:
   - docker
 
@@ -19,7 +20,9 @@ cache: pip
 branches:
   only:
   - master
-  - stable
+  - develop
+  # Tags like 1.0.0 or 1.0.0-rev4
+  - /^\d+\.\d+\.\d+(\-.+)?$/
 
 # Add sonarcloud addon
 addons:
@@ -45,9 +48,11 @@ script:
   - cd ..
   - sonar-scanner
 
+# Commands executed before deploy
 before_deploy:
   - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 
+# Deploy the docker image
 deploy:
   provider: script
   script:
