@@ -26,25 +26,14 @@ from https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/ to detect, cr
 ![Face2Face Demo 2](https://raw.githubusercontent.com/jtorregrosa/face2face-face-align-api/master/docs/images/demo2.jpg)
 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and 
-testing purposes. 
-
-See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
+## Prerequisites
 
 * Python3
 * Pip
 * Docker
 * Make
 
-```
-Give examples
-```
-
-### Installing
+## Installing
 
 1. Clone this repository in your local system and navigate to root folder.
 
@@ -91,6 +80,24 @@ The tests are implemented using PyTest. In order to run them execute:
 $ cd src
 $ make test
 ```
+
+## Docker
+
+You can use the project via Docker using the following image https://cloud.docker.com/repository/docker/jtorregrosa/face2face-face-align-api
+
+### Run
+```bash
+$ docker run -it -e NUM_WORKERS=2 -p "8000:8000" jtorregrosa/face2face-face-align-api
+```
+
+This will expose on http://127.0.0.1:8000 the Swagger API docs and that's all!
+
+### Environment
+- APP_ENV: Application environment (dev|prod)
+- SECRET_KEY: Application secret key
+- NUM_WORKERS: Number of workers (recommended 2 * available_cores)
+- WORKER_CLASS: Gunicorn worker classes (http://docs.gunicorn.org/en/stable/settings.html#worker-class)
+- NUM_THREADS_PER_WORKER: Number of threads per worker (recommended 2 * available_cores)
 
 ## Usage
 

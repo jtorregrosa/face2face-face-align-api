@@ -20,7 +20,7 @@ version: '3'
 services:
 
   face2face-align-api:
-    image: face2face-align-api:latest
+    image: jtorregrosa/face2face-face-align-api:latest
     ports:
       - "8000:8000"
     environment:

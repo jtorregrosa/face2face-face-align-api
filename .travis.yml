@@ -59,6 +59,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: cd ./src && IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make push-image
+  script: cd ./src && IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make push-image && IMAGE=jtorregrosa/face2face-face-align-api TAG=latest make push-image
   on:
     tags: true
