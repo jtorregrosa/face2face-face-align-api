@@ -28,7 +28,7 @@ test:
 	pytest
 
 image:
-	docker build -t ${IMAGE}:${TAG} .
+	docker build -t ${IMAGE}:${TAG} -t ${IMAGE}:latest .
 
 push-image:
 	docker push ${IMAGE}:${TAG}
