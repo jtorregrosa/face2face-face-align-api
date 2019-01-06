@@ -6,6 +6,14 @@ os:
 python:
   - "3.6"
 
+cache: pip
+
+addons:
+  sonarcloud:
+    organization: "jtorregrosa-github"
+    token:
+      secure: Ohejy/ei3KujfESOl7Q9dK3FCmJQXE53WlpxBMy0nS/EBTn7BzItigom0Qwi1dhmf9naFNILvAamu2B49Z7Fnm432BooHx863yiby51/l4B0HoYENtco2kOOZLZZRmFP3niYoK9IPs8d1l8ubMsOcVNnokGzme4Jv52D4QY7NdRkO3w6GGsizOS92xeIvByrArar833YOtsZljbiCVY7p7EPYOmlSeiikjzzIaoLxF+EhlCmLHmRYSb5nWe91PhhDAVg5sj9UjLW12fF0yngyx/gWs8/FPyFduU5vZ0NLjM5xg/B0AsVZUReW7mCn95FYRsU1Qf68omgZkhfxMTYLIvor9/fdeGNxbmCQtSr+zLc+AMrsXqwYvYgrf0B8gcyUgJdiOATpPQ8M2g1xf9KN0aNbHXdyKPgrQpiW6Jf1BeR0jGBnPoqI7kee5ThGe+9eeLWqwl9MMq3edQ3FDhxpI38YSLZ1Dz1mRH82EMfsnKS2eXcRe11Je9NM0nRCdxftZU92lJy5pQHGdDXooVJlXCrX3dLv9zB1LfOVT+1cq0cy59N5Il1jK/UtstUp3LpEZmAqfCs4jmdR0ho/UN59VTO3Jfpv5/+Dyb1wQQsdfNEnWD4JgI3I6JWvRjVqopFMiUudcXvGWqgsYngqelfg8pHOZ1E4HZx1efUNWZDw1c=
+
 # Command to install dependencies
 install:
   - pip install -r requirements.txt
@@ -15,10 +23,8 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y python-pip python-dev build-essential cmake libopenblas-dev liblapack-dev --no-install-recommends
 
-# Navigate to src folder before running the script
-before_script:
-  - cd src
-
 # Command to run tests
 script:
   - make test
+  - cd ..
+  - sonar-scanner
