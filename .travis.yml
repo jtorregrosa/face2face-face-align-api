@@ -14,7 +14,10 @@ services:
   - docker
 
 # Use cache on pip
-cache: pip
+cache:
+  pip: true
+  directories:
+    - ${HOME}/.sonar/cache
 
 # Build only following branches
 branches:
@@ -56,6 +59,7 @@ before_deploy:
 deploy:
   provider: script
   script:
+    - cd src
     - IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make push-image
   on:
     tags: true
