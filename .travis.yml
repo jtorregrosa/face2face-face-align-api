@@ -58,8 +58,7 @@ before_deploy:
 # Deploy the docker image
 deploy:
   provider: script
-  script:
-    - cd src
-    - IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make push-image
+  skip_cleanup: true
+  script: cd ./src && IMAGE=jtorregrosa/face2face-face-align-api TAG=${TRAVIS_TAG} make push-image
   on:
     tags: true
