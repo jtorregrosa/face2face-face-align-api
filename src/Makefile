@@ -1,4 +1,6 @@
-.PHONY: clean system-packages python-packages install tests run all gunicorn create-env activate-env deactivate-env
+.PHONY: clean system-packages python-packages install test run all gunicorn create-env image push-image
+
+IMAGE := jtorregrosa/face2face-face-align-api
 
 clean:
 	find . -type f -name '*.pyc' -delete
@@ -24,5 +26,11 @@ gunicorn:
 
 test:
 	pytest
+
+image:
+	docker build -t ${IMAGE}:${TAG} .
+
+push-image:
+	docker push ${IMAGE}:${TAG}
 
 all: clean install tests run
