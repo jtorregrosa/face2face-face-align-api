@@ -1,6 +1,14 @@
 # Face2Face - DLib Face Alignment API
+[![Build Status](https://travis-ci.com/jtorregrosa/face2face-face-align-api.svg?branch=master)](https://travis-ci.com/jtorregrosa/face2face-face-align-api)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jtorregrosa_face2face-face-align-api&metric=alert_status)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jtorregrosa_face2face-face-align-api&metric=reliability_rating)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jtorregrosa_face2face-face-align-api&metric=security_rating)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jtorregrosa_face2face-face-align-api&metric=bugs)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jtorregrosa_face2face-face-align-api&metric=vulnerabilities)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jtorregrosa_face2face-face-align-api&metric=code_smells)
 
-![Face2Face Logo](https://raw.githubusercontent.com/jtorregrosa/face2face-dlib-face-alignment-api/master/docs/images/logo.png)
+
+![Face2Face Logo](https://raw.githubusercontent.com/jtorregrosa/face2face-face-align-api/master/docs/images/logo.png)
 
 This project is part of a set of projects that make up Face2Face (still in development).
 
@@ -9,13 +17,13 @@ algorithm that learn how to recognize faces.
 
 This is the first phase in order to build a face recognition pipeline.
 
-![Face2Face Demo 1](https://raw.githubusercontent.com/jtorregrosa/face2face-dlib-face-alignment-api/master/docs/images/demo1.jpg)
+![Face2Face Demo 1](https://raw.githubusercontent.com/jtorregrosa/face2face-face-align-api/master/docs/images/demo1.jpg)
 
 The process uses a 68 face landmark shape predictor trained by `C. Sagonas, E. Antonakos, G, Tzimiropoulos, S. Zafeiriou, M. Pantic.`
 from https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/ to detect, crop, stretch and align faces in the same way. This allow us to get high quality faces for our algorithms.
 
  
-![Face2Face Demo 2](https://raw.githubusercontent.com/jtorregrosa/face2face-dlib-face-alignment-api/master/docs/images/demo2.jpg)
+![Face2Face Demo 2](https://raw.githubusercontent.com/jtorregrosa/face2face-face-align-api/master/docs/images/demo2.jpg)
 
 
 ## Getting Started
@@ -114,7 +122,7 @@ An example of the response:
 
 This endpoint will extract all the faces present in the provided image.
 
-`{base-url}/api/align/single/{size}`
+`{base-url}/api/align/multiple/{size}`
 
 You must provide a path parameter indicating the desired output size. This value must be > 0.
 
@@ -145,17 +153,17 @@ An example of the response:
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jtorregrosa/face2face-face-align-api/tags). 
 
 ## Authors
 
 * **Jorge Torregrosa** - *Main Developer* - [jtorregrosa](https://github.com/jtorregrosa)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](CONTRIBUTORS.md) who participated in this project.
 
 ## License
 
